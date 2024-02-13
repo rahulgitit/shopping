@@ -14,18 +14,22 @@ def home(request):
     mobile=product.objects.filter(category="M")
     other=product.objects.filter(category="Other")
     return render(request,"home.html",{"topwear":topwear, "bottomwear":bottomwear, "laptop":laptop, "mobile":mobile, "other":other})
+
 def mobileinfo(request):
     mobile=product.objects.filter(category="M")
     return render(request,"mobile.html",{"mobile:":mobile})
+
 def laptop(request):
     laptop=product.objects.filter(category="L")
     return render(request,"laptop.html",{"lap:":laptop})
+
 def top(request):
     top=product.objects.filter(category="TW")
     return render(request,"top.html",{"top:":top})
+
 def bottom(request):
     bottom=product.objects.filter(category="BW")
-    return render(request,"bottom.html",{"mo:":bottom})
+    return render(request,"bottom.html",{"bottom:":bottom})
 
 def product_details(request,pk):
     obj=product.objects.get(pk=pk)

@@ -4,17 +4,21 @@
 {% block content %}
 <h1>mobile data</h1>
 
-{% for mobile in mo %}
-{{mobile.title}} 
-<div class="card" style="width:18rem;">
-  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    b5
+<div class="container-flude m-3">
+  <h3 class="text-capitalize">best mobile</h3>
+  <div class="row">
+    {% for mobile in mobile %}
+    <div class="card m-1" style="width:16rem;" height="250px">
+      <a href="{% url 'product_details' mobile.id %}" class="btn p-0">
+        <img src={{mobile.product_images.url}} style="width:15rem;" height="250px" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Card title: {{mobile.title}}</h5>
+          <h6 class="card-subtitle text-muted ">selling_price: {{mobile.selling_price}}</h6>
+          <p>{{mobile.discriptions}}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
   </div>
-</div>  
-{% endfor %}
-    
+  
 {% endblock content %}

@@ -1,5 +1,7 @@
 body{
     /* background: peru; */
+    margin: 0px;
+    padding: 0px;
     background-image: "C:\Users\hp\Desktop\add_to_cart\cart\static\images\annie-spratt-wuc-KEIBrdE-unsplash.jpg";
 }
 .header{

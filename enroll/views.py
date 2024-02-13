@@ -16,7 +16,7 @@ def home(request):
     return render(request,"home.html",{"topwear":topwear, "bottomwear":bottomwear, "laptop":laptop, "mobile":mobile, "other":other})
 def mobileinfo(request):
     mobile=product.objects.filter(category="M")
-    return render(request,"mobile.html",{"mo:":mobile})
+    return render(request,"mobile.html",{"mobile:":mobile})
 def laptop(request):
     laptop=product.objects.filter(category="L")
     return render(request,"laptop.html",{"lap:":laptop})
